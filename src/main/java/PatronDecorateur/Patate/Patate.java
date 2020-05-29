@@ -7,6 +7,7 @@ public class Patate implements IIngredient {
   private String description="";
 
   public Patate(double cost, String description) {
+    System.out.print("Making potato");
     this.cost = cost;
     this.description = description;
   }

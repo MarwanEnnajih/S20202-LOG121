@@ -7,7 +7,7 @@ public class Mozzarella extends Ingredient {
 
 	public Mozzarella(IIngredient newPizza, Double cost, String description) {
 		super(newPizza, cost, description);
-		System.out.println("Adding Mozarella");
+		System.out.println(", adding Mozarella");
 	}
 	
 	// Returns the result of calling getDescription() for
@@ -18,12 +18,8 @@ public class Mozzarella extends Ingredient {
 		
 	}
 	
-	public double getCost(){
-		
-		System.out.println("Cost of Moz: " + super.getCost());
-		
+	public double getCost(){		
 		return getiIngredient().getCost() + super.getCost();
-		
 	}
 	
 }

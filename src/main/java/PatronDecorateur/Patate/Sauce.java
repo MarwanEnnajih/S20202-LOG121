@@ -7,9 +7,8 @@ public class Sauce extends Ingredient {
 
   public Sauce(IIngredient ingredient, double cost, String description) {
     super(ingredient,cost,description);
-    System.out.println("Add sauce");
+    System.out.print(", adding sauce");
   }
-  
 
 @Override
   public String getDescription() {

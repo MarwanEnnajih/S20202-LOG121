@@ -7,7 +7,7 @@ public class TomatoSauce extends Ingredient {
 
 	public TomatoSauce(IIngredient newPizza, Double cost, String description) {
 		super(newPizza, cost, description);
-		System.out.println("Adding Sauce");
+		System.out.print(", adding Sauce");
 	}
 	
 	// Returns the result of calling getDescription() for

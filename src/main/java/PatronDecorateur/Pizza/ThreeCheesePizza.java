@@ -16,6 +16,7 @@ public class ThreeCheesePizza implements IIngredient {
 	 private String description = "";
 
 	public ThreeCheesePizza(Double cost, String description) {
+		System.out.print("Making three cheese pizza");
 		this.cost = cost;
 		this.description = description;
 	}

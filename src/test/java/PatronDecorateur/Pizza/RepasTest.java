@@ -5,9 +5,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import PatronDecorateur.Coffee.SimpleCoffee;
 import PatronDecorateur.Coffee.WithMilk;
+import PatronDecorateur.Patate.Fromage;
 import PatronDecorateur.Patate.Patate;
 import PatronDecorateur.Patate.Sauce;
 import PatronDecorateur.Repas.IIngredient;
+import PatronDecorateur.Repas.Repas;
 
 public class RepasTest
  {
@@ -21,7 +23,7 @@ public class RepasTest
         pizza = (IIngredient) new Mozzarella(pizza, 0.5, "with Mozzarella");
         assertEquals(11,pizza.getCost(),0.001);;
 
-         IIngredient coffe = (IIngredient) new SimpleCoffee(1.0, "Coffee");
+        IIngredient coffe = (IIngredient) new SimpleCoffee(1.0, "Coffee");
         assertEquals(1.0,coffe.getCost(),0.001);
         assertEquals("Coffee",coffe.getDescription());
 
@@ -37,6 +39,13 @@ public class RepasTest
        assertEquals(4.0, patate.getCost(),0.001);
        assertEquals("Patates du lac St-Jean, avec sauce brune", patate.getDescription());
 
+       patate = new Fromage(patate, 1.25, "du fromage");
+       assertEquals(5.25, patate.getCost(), 0.001);
+       assertEquals("Patates du lac St-Jean, avec sauce brune et du fromage", patate.getDescription());
+
+        Repas prixRepasTot = new Repas(pizza, coffe, patate);
+        assertEquals(17.75, prixRepasTot.calculDesRepas(), 0.001);
+
 // + 1.25
 //Total 17.75
 
@@ -50,5 +59,7 @@ public class RepasTest
 
         // Faire le diagramme de séquence de ce test et ajouter le dans Patate/README.me
 
+        // Faire le diagramme de séquence de ce test et ajouter le dans Patate/README.me
+        // Ne pas modéliser les assertEquals.
     }
 }
